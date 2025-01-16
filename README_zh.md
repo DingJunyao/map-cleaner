@@ -1,5 +1,7 @@
 # map-cleaner
 
+[English Version](README.md)
+
 隐藏地图网站上的诸如工具栏、搜索框等控件。
 
 ## 支持
