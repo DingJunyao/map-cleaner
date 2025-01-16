@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         Map Cleaner
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Hide things such as toolbox, search bar on map website.
-// @description:zh  隐藏地图网站上的诸如工具栏、搜索框等控件。
+// @description:zh-CN  隐藏地图网站上的诸如工具栏、搜索框等控件。
+// @description:zh-TW  隱藏地圖網站上的諸如工具欄、搜索框等控件。
 // @author       DingJunyao
 // @match        https://map.baidu.com/*
 // @match        https://www.google.com/maps/*
@@ -14,6 +15,7 @@
 // @require      https://code.jquery.com/jquery-3.1.0.slim.min.js
 // @grant        none
 // @website      https://github.com/DingJunyao/mapCleaner
+// @license      MIT
 // ==/UserScript==
 
 (function() {

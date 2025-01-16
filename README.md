@@ -4,6 +4,10 @@
 
 Clear things such as toolbox, search bar on map website.
 
+## Install
+
+[Install via Greasy Fork](https://greasyfork.org/scripts/523967-map-cleaner)
+
 ## Supports
 
 - Google Maps

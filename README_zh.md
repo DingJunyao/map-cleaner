@@ -4,6 +4,10 @@
 
 隐藏地图网站上的诸如工具栏、搜索框等控件。
 
+## 安装
+
+[在 Greasy Fork 上安装](https://greasyfork.org/zh-CN/scripts/523967-map-cleaner)
+
 ## 支持
 
 - 谷歌地图
