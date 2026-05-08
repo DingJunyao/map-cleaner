@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Map Cleaner
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.1.0
 // @description  Hide things such as toolbox, search bar on map website.
 // @description:zh-CN  隐藏地图网站上的诸如工具栏、搜索框等控件。
 // @description:zh-TW  隱藏地圖網站上的諸如工具欄、搜索框等控件。
