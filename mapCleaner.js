@@ -11,11 +11,16 @@
 // @match        http://www.google.cn/maps/*
 // @match        https://www.amap.com/
 // @match        https://www.amap.com/
-// @match        https://dito.amap.com/
+// @match        https://www.amap.com/*
+// @match        https://www.amap.com/*
+// @match        https://ditu.amap.com/
+// @match        https://ditu.amap.com/*
 // @require      https://code.jquery.com/jquery-3.1.0.slim.min.js
 // @grant        none
 // @website      https://github.com/DingJunyao/mapCleaner
 // @license      MIT
+// @downloadURL https://update.greasyfork.org/scripts/523967/Map%20Cleaner.user.js
+// @updateURL https://update.greasyfork.org/scripts/523967/Map%20Cleaner.meta.js
 // ==/UserScript==
 
 (function() {
@@ -25,16 +30,19 @@
     zList.baidu_id = "left-panel,app-right-top,map-operate,mapType,newuilogo,map-bottom-tip,tooltip-route".split(",");
     zList.baidu_class = "BMap_scaleCtrl,BMap_cpyCtrl,tooltip,render-mode-tips-button,black-tips".split(",");
     zList.baidu_class_important = "".split(",");
+    zList.baidu_class_prefix = "".split(",");
     zList.baidu_special = "".split(",");
     zList.google_id = "assistive-chips,vasquette,watermark,omnibox-container".split(",");
     zList.google_class = "app-viewcard-strip,scene-footer-container,widget-pane-toggle-button-container,widget-scene-effects noprint".split(",");
     zList.google_class_important = "".split(",");
+    zList.google_class_prefix = "".split(",");
     zList.google_special = ["#pane + div"];
     zList.google_special_collapse = ['#pane + div button[jsaction*="drawer.close"]'];
     zList.google_special_expand = ['#pane + div button[jsaction*="drawer.open"]'];
     zList.amap_id = "dirBox,amapBox,loginbox,amapAppDownload,citybox".split(",");
-    zList.amap_class = "dir_qr,maptoolbox,layerbox,search,amap-controls".split(",");
+    zList.amap_class = "dir_qr,maptoolbox,layerbox,search,amap-controls,page-group-wrapper,aipc-toolbar,ant-space".split(",");
     zList.amap_class_important = "amap-copyright,amap-logo".split(",");
+    zList.amap_class_prefix = "FooterInfo_footer".split(",");
     zList.amap_special = "".split(",");
     //判断域名
     if(document.domain.match("google")){
@@ -59,12 +67,14 @@
                 jqHide.each(zList[zList.domain + "_class"],function(i,n){jqHide("."+n).hide();});
                 jqHide.each(zList[zList.domain + "_special"],function(i,n){jqHide(n).hide();});
                 jqHide.each(zList[zList.domain + "_class_important"],function(i,n){jqHide("."+n).attr('style','display:none !important');});
+                jqHide.each(zList[zList.domain + "_class_prefix"],function(i,n){jqHide('[class^="'+n+'"]').hide();});
 
             } else {
                 jqHide.each(zList[zList.domain + "_id"],function(i,n){jqHide("#"+n).show();});
                 jqHide.each(zList[zList.domain + "_class"],function(i,n){jqHide("."+n).show();});
                 jqHide.each(zList[zList.domain + "_special"],function(i,n){jqHide(n).show();});
                 jqHide.each(zList[zList.domain + "_class_important"],function(i,n){jqHide("."+n).attr('style','');});
+                jqHide.each(zList[zList.domain + "_class_prefix"],function(i,n){jqHide('[class^="'+n+'"]').show();});
                 if (zList.domain == "google") {
                     jqHide.each(zList.google_special_expand, function(i, n){jqHide(n).click();});
                 }
